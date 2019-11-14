@@ -197,6 +197,7 @@ class Metadata(object):
 
     def radiometric_cal(self):
         nelem = self.size('XMP:CalibrationMeasurement')
+        print(self.get_item('XMP:CalibrationMeasurement', 0))
         return [float(self.get_item('XMP:CalibrationMeasurement', i)) for i in range(nelem)]
 
     def black_level(self):
