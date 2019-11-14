@@ -248,17 +248,12 @@ class Metadata(object):
         return fp_x_resolution, fp_y_resolution
 
     def focal_length_mm(self):
-        units = self.get_item('XMP:PerspectiveFocalLengthUnits')
         focal_length_mm = 0.0
-        if units == 'mm':
-            focal_length_mm = float(self.get_item('XMP:PerspectiveFocalLength'))
-        else:
-            focal_length_px = float(self.get_item('XMP:PerspectiveFocalLength'))
-            focal_length_mm = focal_length_px / self.focal_plane_resolution_px_per_mm()[0]
+        focal_length_mm = float(self.get_item('EXIF:FocalLength'))
         return focal_length_mm
 
     def focal_length_35_mm_eq(self):
-        return float(self.get_item('Composite:FocalLength35efl'))
+        return float(self.get_item('EXIF:FocalLengthIn35mmFormat'))
 
     def __float_or_zero(self, str):
         if str is not None:
