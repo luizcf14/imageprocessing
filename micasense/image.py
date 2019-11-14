@@ -68,12 +68,6 @@ class Image(object):
         self.path = image_path
         self.meta = metadata.Metadata(self.path, exiftool_obj=exiftool_obj)
 
-        if self.meta.band_name() is None:
-            raise ValueError("Provided file path does not have a band name: {}".format(image_path))
-        if self.meta.band_name().upper() != 'LWIR' and not self.meta.supports_radiometric_calibration():
-            raise ValueError('Library requires images taken with RedEdge-(3/M/MX) camera firmware v2.1.0 or later. ' +
-            'Upgrade your camera firmware to at least version 2.1.0 to use this library with RedEdge-(3/M/MX) cameras.')
-
         self.utc_time = self.meta.utc_time()
         self.latitude, self.longitude, self.altitude = self.meta.position()
         self.location = (self.latitude, self.longitude, self.altitude)
