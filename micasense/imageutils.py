@@ -158,7 +158,7 @@ def align(pair):
                 print("Starting warp for level {} is:\n {}".format(level,warp_matrix))
 
             try:
-                cc, warp_matrix = cv2.findTransformECC(grad1, grad2, warp_matrix, warp_mode, criteria, inputMask=None, gaussFiltSize=1)
+                cc, warp_matrix = cv2.findTransformECC(grad1, grad2, warp_matrix, warp_mode, criteria, None, 1)
             except TypeError:
                 cc, warp_matrix = cv2.findTransformECC(grad1, grad2, warp_matrix, warp_mode, criteria)
             
