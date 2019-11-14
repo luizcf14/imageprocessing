@@ -350,7 +350,7 @@ class Image(object):
 
     def cv2_distortion_coeff(self):
         #dist_coeffs = np.array(k[0],k[1],p[0],p[1],k[2]])
-        return np.array(self.distortion_parameters)[[0, 1, 3, 4, 2]]
+        return np.array(self.distortion_parameters)[[0, 1, 2, 3]]
 
     # values in pp are in [mm], rescale to pixels
     def principal_point_px(self):
