@@ -197,7 +197,7 @@ class Metadata(object):
 
     def radiometric_cal(self):
         nelem = self.size('XMP:CalibrationMeasurement')
-        return [float(self.get_item('XMP:RadiometricCalibration', i)) for i in range(nelem)]
+        return [float(self.get_item('XMP:CalibrationMeasurement', i)) for i in range(nelem)]
 
     def black_level(self):
         if self.get_item('EXIF:BlackLevel') is None:
