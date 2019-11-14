@@ -196,7 +196,7 @@ class Metadata(object):
         return self.get_item('XMP:WavelengthFWHM')
 
     def radiometric_cal(self):
-        nelem = self.size('XMP:RadiometricCalibration')
+        nelem = self.size('XMP:CalibrationMeasurement')
         return [float(self.get_item('XMP:RadiometricCalibration', i)) for i in range(nelem)]
 
     def black_level(self):
