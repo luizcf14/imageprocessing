@@ -237,8 +237,8 @@ class Metadata(object):
         return [float(self.get_item('XMP:VignettingPolynomial', i)) for i in range(nelem)]
 
     def distortion_parameters(self):
-        nelem = self.size('XMP:PerspectiveDistortion')
-        return [float(self.get_item('XMP:PerspectiveDistortion', i)) for i in range(nelem)]
+        nelem = self.size('XMP:FisheyeAffineMatrix')#XMP:PerspectiveDistortion
+        return [float(self.get_item('XMP:FisheyeAffineMatrix', i)) for i in range(nelem)]
 
     def principal_point(self):
         return [float(item) for item in self.get_item('XMP:PrincipalPoint').split(',')]
