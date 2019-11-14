@@ -103,7 +103,7 @@ class Metadata(object):
                or self.get_item("XMP:DirectIrradiance is not None") is not None
 
     def supports_radiometric_calibration(self):
-        if(self.get_item('XMP:CalibrationPicture')) is None:
+        if(self.get_item('XMP:CalibrationPicture') is None):
             return False
         return True
 
