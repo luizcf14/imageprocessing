@@ -228,8 +228,8 @@ class Metadata(object):
 
     def vignette_center(self):
         ''' get the vignette center in X and Y image coordinates'''
-        nelem = self.size('XMP:VignettingCenter')
-        return [float(self.get_item('XMP:VignettingCenter', i)) for i in range(nelem)]
+        nelem = self.size('XMP:PrincipalPoint')#XMP:VignettingCenter
+        return [float(self.get_item('XMP:PrincipalPoint', i)) for i in range(nelem)]
 
     def vignette_polynomial(self):
         ''' get the radial vignette polynomial in the order it's defined in the metadata'''
