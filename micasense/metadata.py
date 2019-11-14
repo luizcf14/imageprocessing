@@ -184,7 +184,7 @@ class Metadata(object):
         return exp
 
     def gain(self):
-        return self.get_item('EXIF:ISOSpeed')/100.0
+        return self.get_item('EXIF:ISO')/100.0
 
     def image_size(self):
         return self.get_item('EXIF:ImageWidth'), self.get_item('EXIF:ImageHeight')
